@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function App3() {
+export default function App4() {
     return (
         <div>
-            <h1>hummm kya ye aayega</h1>
+            <h1>All well!!</h1>
         </div>
     )
 }

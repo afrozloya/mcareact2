@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import Car from './Car'
+import App4 from './App4'
+import App3 from './App3'
+
 
 export default class App extends Component {
   state = {
@@ -20,6 +23,8 @@ export default class App extends Component {
         <Car brand="Merc" make="2019"/>
         <h1>New Car!!</h1>
         <Car brand={this.state.brand} make="2020" />
+        <App3 />
+        <App4 />
       </div>
     )  
   }
