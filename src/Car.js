@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Car extends Component {
-    render() {
-        return (
-            <div>
-            <h1>I am a {this.props.brand}, make {this.props.make} </h1>
-            </div>
-        )
-    }
+export default function Car(props) {
+    return (
+        <div>
+            <h1>I am {props.brand}, make : {props.make}!</h1>
+        </div>
+    )
 }
