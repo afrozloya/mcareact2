@@ -11,29 +11,10 @@ export default class componentName extends Component {
         ],
         txt: '',
         si: '',
-        filteredTodos: []
-    }
-    componentDidMount(){
-        this.setState({
-            filteredTodos: this.state.todos,
-        })
     }
     onChHand = (e) => {
         this.setState({
-            "txt": e.target.value 
-        })
-    }
-    onChHand2 = (e) => {
-        this.setState({
-            "si": e.target.value 
-        })
-        const newtodos = this.state.todos.filter( t1 => {
-            var siRegex = new RegExp(e.target.value, "i")
-            return t1.text.search(siRegex) !== -1
-        })        
-        this.setState({
-            // todos: newtodos,  
-            filteredTodos: newtodos           
+            [e.target.name]: e.target.value 
         })
     }
     onClk = () => {
@@ -42,7 +23,6 @@ export default class componentName extends Component {
         this.setState({
             txt: '',
             todos: newtodos,
-            filteredTodos: newtodos
         })
     }
     onDel = (id) => {
@@ -51,17 +31,21 @@ export default class componentName extends Component {
         })        
         this.setState({
             todos: newtodos,
-            filteredTodos: newtodos
         })
     }
     render() {
+        const newtodos = this.state.todos.filter( t1 => {
+            var siRegex = new RegExp(this.state.si, "i")
+            return t1.text.search(siRegex) !== -1
+        })        
+
         return (
             <div>
-                <input name="si" value={this.state.si} onChange={this.onChHand2} /><br/>
+                <input name="si" value={this.state.si} onChange={this.onChHand} /><br/>
                 <input name="txt" value={this.state.txt} onChange={this.onChHand} />
                 <button onClick={this.onClk}>Add</button>
                 {                    
-                    this.state.filteredTodos.map( t1 => <p key={t1.id}>{t1.id} :: {t1.text} {' '}
+                    newtodos.map( t1 => <p key={t1.id}>{t1.id} :: {t1.text} {' '}
                     <button onClick={() => this.onDel(t1.id)}>X</button>
                     </p>)
                 }
