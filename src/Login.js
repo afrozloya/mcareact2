@@ -13,7 +13,7 @@ export default class componentName extends Component {
         })
     }
     onLoginHand = (e) => {
-        const url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBNsnzMRlujS0JzxGouKQiacT3jhOOpbts";
+        const url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=YOUR_KEY";
         const data = {
             email: this.state.email,
             password: this.state.password,
@@ -34,7 +34,7 @@ export default class componentName extends Component {
     }
 
     onReg = (e) => {
-        const url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBNsnzMRlujS0JzxGouKQiacT3jhOOpbts";
+        const url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=YOUR_KEY";
         const data = {
             email: this.state.email,
             password: this.state.password,
